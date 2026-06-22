@@ -267,6 +267,7 @@
 
     section {
       padding: 42px 0;
+      scroll-margin-top: 92px;
     }
 
     .section-head {
@@ -536,6 +537,117 @@
     td:first-child {
       font-weight: 800;
       color: var(--ink);
+    }
+
+    .budget-section {
+      background: linear-gradient(180deg, #f6faf8 0%, #ffffff 100%);
+      border-top: 1px solid var(--line);
+    }
+
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .budget-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 12px 35px rgba(18, 40, 36, 0.08);
+      overflow: hidden;
+    }
+
+    .budget-card header {
+      padding: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--teal-dark), var(--sky));
+    }
+
+    .budget-card:nth-child(2) header {
+      background: linear-gradient(135deg, #315f72, var(--coral));
+    }
+
+    .budget-card:nth-child(3) header {
+      background: linear-gradient(135deg, #253f5f, var(--teal));
+    }
+
+    .budget-card h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .budget-card header p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 13px;
+    }
+
+    .budget-body {
+      padding: 16px;
+    }
+
+    .budget-total {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .budget-total div {
+      min-height: 76px;
+      padding: 11px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-soft);
+      border: 1px solid rgba(219, 231, 225, 0.82);
+    }
+
+    .budget-total span,
+    .budget-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .budget-total strong {
+      display: block;
+      margin-top: 3px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .budget-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .budget-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .budget-list strong {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .budget-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid #f0d5c4;
+      background: #fff7f0;
+      color: #73513d;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .gallery-section {
@@ -891,6 +1003,7 @@
       }
 
       .cards-grid,
+      .budget-grid,
       .profile-grid,
       .visa-grid {
         grid-template-columns: 1fr 1fr;
@@ -912,6 +1025,10 @@
     @media (max-width: 680px) {
       .shell {
         width: min(100% - 26px, 1180px);
+      }
+
+      section {
+        scroll-margin-top: 132px;
       }
 
       .nav {
@@ -944,6 +1061,7 @@
 
       .date-strip,
       .cards-grid,
+      .budget-grid,
       .profile-grid,
       .visa-grid,
       .metric-grid,
@@ -990,6 +1108,7 @@
         <a href="#summary">推荐</a>
         <a href="#destinations">目的地</a>
         <a href="#compare">对比表</a>
+        <a href="#budget">费用预估</a>
         <a href="#gallery">详细清单</a>
         <a href="#routes">路线图</a>
         <a href="#visa">签证</a>
@@ -1092,7 +1211,7 @@
       <div class="shell">
         <div class="section-head">
           <h2>三个目的地快速判断</h2>
-          <p class="section-note">成本为双人 6-8 晚粗估，不含婚礼本身支出；暑期、直飞余票、酒店档次会显著影响价格。</p>
+          <p class="section-note">预算已按 8.1-8.10 上海往返、双人 9 晚口径更新；暑期、直飞余票、酒店档次会显著影响价格。</p>
         </div>
         <div class="cards-grid">
           <article class="destination-card">
@@ -1102,7 +1221,7 @@
               <h3>马来西亚仙本那</h3>
               <p>最大卖点是玻璃海、跳岛、浮潜/深潜和水屋。适合“蜜月要有顶级海水颜色”的路线，但从鹤壁婚礼后出发转机链条较长。</p>
               <div class="metric-grid">
-                <div class="metric"><span>双人预算</span><strong>约 1.6-2.8 万+</strong></div>
+                <div class="metric"><span>双人预算</span><strong>9 晚约 2.4-6.5 万</strong></div>
                 <div class="metric"><span>签证</span><strong>马来西亚短期免签需复核</strong></div>
                 <div class="metric"><span>语言</span><strong>中文团多，离岛偏英文/马来语</strong></div>
                 <div class="metric"><span>适合</span><strong>潜水、跳岛、水屋</strong></div>
@@ -1118,7 +1237,7 @@
               <h3>印尼：巴厘岛主线</h3>
               <p>8 月通常是巴厘岛旅行舒适季，酒店、餐厅、包车、旅拍和海岛一日游选择成熟。可按预算从精品酒店到奢华别墅自由升级。</p>
               <div class="metric-grid">
-                <div class="metric"><span>双人预算</span><strong>约 1.8-3.5 万</strong></div>
+                <div class="metric"><span>双人预算</span><strong>9 晚约 2.8-9.0 万</strong></div>
                 <div class="metric"><span>签证</span><strong>VOA / e-VOA 30 天</strong></div>
                 <div class="metric"><span>语言</span><strong>英文成熟，中文服务较常见</strong></div>
                 <div class="metric"><span>适合</span><strong>度假酒店、悬崖、乌布、海岛</strong></div>
@@ -1134,7 +1253,7 @@
               <h3>韩国釜山</h3>
               <p>已有韩国签证时，釜山是执行风险最低的选择。海边城市、咖啡馆、韩餐、温泉和城市漫游舒服，但传统海岛蜜月感不如前两者。</p>
               <div class="metric-grid">
-                <div class="metric"><span>双人预算</span><strong>约 1.4-2.6 万</strong></div>
+                <div class="metric"><span>双人预算</span><strong>9 晚约 2.0-6.5 万</strong></div>
                 <div class="metric"><span>签证</span><strong>你已持签证，最稳</strong></div>
                 <div class="metric"><span>语言</span><strong>中文标识较多，英文中等</strong></div>
                 <div class="metric"><span>适合</span><strong>城市海滨、美食、低压力旅行</strong></div>
@@ -1208,6 +1327,80 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
+
+    <section id="budget" class="budget-section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>上海出发费用预估</h2>
+          <p class="section-note">按双人 8.1 上海出发、8.10 返回、9 晚住宿估算。机票和酒店按暑期旺季区间预估，实际价格会随出票时间、直飞/转机、房型和退改政策波动。</p>
+        </div>
+        <div class="budget-grid">
+          <article class="budget-card">
+            <header>
+              <h3>马来西亚仙本那</h3>
+              <p>上海往返斗湖/亚庇转斗湖，镇上过渡 + 离岛住宿组合。</p>
+            </header>
+            <div class="budget-body">
+              <div class="budget-total">
+                <div><span>性价比双人总价</span><strong>约 2.4-3.4 万</strong></div>
+                <div><span>高端双人总价</span><strong>约 4.2-6.5 万</strong></div>
+              </div>
+              <ul class="budget-list">
+                <li><span>上海-斗湖往返机票，通常需吉隆坡/亚庇转机</span><strong>0.9-1.5 万</strong></li>
+                <li><span>性价比住宿：镇上 2 晚 + 普通离岛/潜店 7 晚</span><strong>0.7-1.1 万</strong></li>
+                <li><span>高端住宿：卡帕莱/马达京/马布水屋 5-7 晚 + 镇上过渡</span><strong>2.2-4.0 万</strong></li>
+                <li><span>斗湖机场接送、码头船程、当地交通</span><strong>0.2-0.5 万</strong></li>
+                <li><span>跳岛、浮潜/深潜、上岛许可、装备租赁</span><strong>0.4-0.9 万</strong></li>
+                <li><span>餐饮、保险、通讯、杂费</span><strong>0.2-0.6 万</strong></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="budget-card">
+            <header>
+              <h3>印尼巴厘岛主线</h3>
+              <p>上海往返登巴萨，南部海边 + 乌布 + 最后两晚升级最均衡。</p>
+            </header>
+            <div class="budget-body">
+              <div class="budget-total">
+                <div><span>性价比双人总价</span><strong>约 2.8-4.2 万</strong></div>
+                <div><span>高端双人总价</span><strong>约 5.5-9.0 万</strong></div>
+              </div>
+              <ul class="budget-list">
+                <li><span>上海-登巴萨往返机票，直飞/转机价格差较大</span><strong>1.0-1.8 万</strong></li>
+                <li><span>性价比住宿：精品酒店/海边四星 + 乌布度假酒店 9 晚</span><strong>0.8-1.6 万</strong></li>
+                <li><span>高端住宿：AYANA/Alila/Six Senses/四季等组合 9 晚</span><strong>3.0-6.0 万</strong></li>
+                <li><span>包车、机场接送、努沙佩尼达船票和岛上交通</span><strong>0.35-0.8 万</strong></li>
+                <li><span>SPA、旅拍、海岛一日游、火山/文化景点门票</span><strong>0.4-1.0 万</strong></li>
+                <li><span>餐饮、签证/旅游税、保险、通讯、杂费</span><strong>0.3-0.8 万</strong></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="budget-card">
+            <header>
+              <h3>韩国釜山</h3>
+              <p>上海往返釜山或首尔转釜山，海云台连续住最省心。</p>
+            </header>
+            <div class="budget-body">
+              <div class="budget-total">
+                <div><span>性价比双人总价</span><strong>约 2.0-3.2 万</strong></div>
+                <div><span>高端双人总价</span><strong>约 3.8-6.5 万</strong></div>
+              </div>
+              <ul class="budget-list">
+                <li><span>上海-釜山往返机票，或上海-首尔-釜山联程</span><strong>0.5-1.2 万</strong></li>
+                <li><span>性价比住宿：海云台/西面商务或四星酒店 9 晚</span><strong>0.7-1.3 万</strong></li>
+                <li><span>高端住宿：Paradise / Signiel / Park Hyatt / Ananti 9 晚</span><strong>2.2-4.5 万</strong></li>
+                <li><span>市内地铁、打车、机场交通、少量跨区交通</span><strong>0.15-0.4 万</strong></li>
+                <li><span>温泉、海上缆车、展望台、咖啡馆和轻体验</span><strong>0.2-0.6 万</strong></li>
+                <li><span>餐饮、购物弹性、保险、通讯、杂费</span><strong>0.45-1.0 万</strong></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="budget-note">预算排序大致为：釜山最容易控预算，巴厘岛价格弹性最大，仙本那的上限由离岛水屋和潜水项目决定。若只看“蜜月感/花出去的钱是否有记忆点”，巴厘岛中高配通常性价比最好。</div>
       </div>
     </section>
 
