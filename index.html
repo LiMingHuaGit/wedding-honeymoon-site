@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7.25-8.14 婚礼蜜月目的地对比</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230f766e'/%3E%3Cstop offset='.5' stop-color='%233f82bf'/%3E%3Cstop offset='1' stop-color='%23df6b5d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='29' fill='url(%23g)'/%3E%3Cpath d='M21 35c7 9 15 9 22 0 4-6 1-14-6-14-3 0-5 2-5 2s-2-2-5-2c-7 0-10 8-6 14z' fill='white'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #f6faf8;
+      --surface: #ffffff;
+      --surface-soft: #eef7f2;
+      --ink: #17211f;
+      --muted: #64706c;
+      --line: #dbe7e1;
+      --teal: #0f766e;
+      --teal-dark: #0a4f4b;
+      --coral: #df6b5d;
+      --gold: #d69a2d;
+      --sky: #3f82bf;
+      --shadow: 0 18px 50px rgba(18, 40, 36, 0.10);
+      --radius: 8px;
+      --radius-sm: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 250, 248, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(219, 231, 225, 0.78);
+    }
+
+    .nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: conic-gradient(from 160deg, var(--teal), var(--sky), var(--coral), var(--teal));
+      box-shadow: 0 8px 20px rgba(15, 118, 110, 0.20);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .navlinks a {
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .navlinks a:hover {
+      background: var(--surface-soft);
+      color: var(--teal-dark);
+    }
+
+    .hero {
+      padding: 34px 0 30px;
+      background:
+        radial-gradient(circle at 11% 18%, rgba(63, 130, 191, 0.12), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(223, 107, 93, 0.12), transparent 22%),
+        linear-gradient(180deg, #f9fcfb 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(34px, 5.4vw, 68px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .btn.primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(15, 118, 110, 0.45);
+    }
+
+    .date-strip {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .date-item {
+      min-height: 86px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      border-radius: var(--radius);
+    }
+
+    .date-item strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .date-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mosaic {
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .photo.large {
+      grid-row: 1 / span 2;
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.42));
+    }
+
+    .caption {
+      position: absolute;
+      z-index: 2;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.34);
+    }
+
+    .caption b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .caption span {
+      display: block;
+      margin-top: 3px;
+      font-size: 12px;
+      opacity: 0.86;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .recommendation {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(300px, 0.45fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .recommend-card,
+    .side-panel,
+    .compare-table,
+    .visa-box,
+    .source-box {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(18, 40, 36, 0.06);
+    }
+
+    .recommend-card {
+      padding: 24px;
+    }
+
+    .recommend-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .rank-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .recommend-card h3 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.18;
+    }
+
+    .recommend-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .scoreline {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: #e8efec;
+      overflow: hidden;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      background: linear-gradient(90deg, var(--teal), var(--sky));
+      border-radius: inherit;
+    }
+
+    .side-panel {
+      padding: 18px;
+    }
+
+    .side-panel h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .mode-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .mode-btn {
+      width: 100%;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .mode-btn[aria-pressed="true"] {
+      background: var(--teal-dark);
+      color: #fff;
+      border-color: var(--teal-dark);
+    }
+
+    .mode-btn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .destination-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: 0 12px 35px rgba(18, 40, 36, 0.08);
+    }
+
+    .card-image {
+      height: 230px;
+      position: relative;
+      background: var(--surface-soft);
+    }
+
+    .card-image .tag {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card-body h3 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .card-body p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      min-height: 68px;
+      padding: 10px;
+      background: var(--surface-soft);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(219, 231, 225, 0.8);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .verdict {
+      margin-top: 14px;
+      padding: 12px;
+      border-left: 4px solid var(--coral);
+      background: #fff7f5;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: #6e3c35;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .compare-table {
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf6f3;
+      color: var(--teal-dark);
+      font-size: 13px;
+    }
+
+    td {
+      background: #fff;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .gallery-section {
+      background: #ffffff;
+      border-block: 1px solid var(--line);
+    }
+
+    .destination-switch {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .destination-tab {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .destination-tab[aria-pressed="true"] {
+      color: #fff;
+      border-color: var(--teal-dark);
+      background: var(--teal-dark);
+    }
+
+    .detail-layout {
+      display: grid;
+      gap: 30px;
+    }
+
+    .detail-block {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      padding-top: 4px;
+    }
+
+    .detail-title h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .detail-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 14px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .profile-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: inherit;
+      box-shadow: 0 10px 28px rgba(18, 40, 36, 0.06);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(15, 118, 110, 0.45);
+      box-shadow: 0 16px 35px rgba(18, 40, 36, 0.10);
+    }
+
+    .profile-card .thumb {
+      height: 150px;
+      background: var(--surface-soft);
+    }
+
+    .profile-card .copy {
+      padding: 12px;
+    }
+
+    .profile-card h4 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.22;
+    }
+
+    .profile-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .profile-card .mini {
+      margin-top: 9px;
+      color: var(--teal-dark);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .profile-card .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .profile-card .meta span {
+      min-height: 24px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 7px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-soft);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #fbfefd, #fff);
+      box-shadow: 0 10px 28px rgba(18, 40, 36, 0.06);
+      padding: 18px;
+    }
+
+    .route-summary {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .route-facts {
+      display: grid;
+      gap: 10px;
+    }
+
+    .route-fact {
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-soft);
+      border: 1px solid rgba(219, 231, 225, 0.82);
+    }
+
+    .route-fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .route-fact strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    .route-map {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .route-node {
+      min-height: 118px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+    }
+
+    .route-node::before {
+      content: attr(data-day);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      height: 24px;
+      padding: 0 8px;
+      margin-bottom: 9px;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .route-node strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.28;
+    }
+
+    .route-node span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .route-tip {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: #fff7f5;
+      color: #6e3c35;
+      border-left: 4px solid var(--coral);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .visa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .visa-box {
+      padding: 18px;
+    }
+
+    .visa-box h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .visa-box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .visa-box li+li {
+      margin-top: 8px;
+    }
+
+    .visa-box a {
+      color: var(--teal-dark);
+      font-weight: 800;
+      border-bottom: 1px solid rgba(15, 118, 110, 0.35);
+    }
+
+    .plan-band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.2fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--line);
+      display: grid;
+      gap: 14px;
+      padding-left: 18px;
+    }
+
+    .step {
+      position: relative;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: var(--radius);
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 5px var(--bg);
+    }
+
+    .step strong {
+      display: block;
+    }
+
+    .step span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-box {
+      padding: 18px;
+    }
+
+    .source-box h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .source-list {
+      columns: 2;
+      column-gap: 24px;
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .source-list li {
+      break-inside: avoid;
+      margin: 0 0 8px;
+    }
+
+    .source-list a {
+      color: var(--teal-dark);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+
+      .hero-grid,
+      .recommendation,
+      .plan-band {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaic {
+        min-height: 420px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cards-grid,
+      .profile-grid,
+      .visa-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .route-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .route-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .date-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(100% - 26px, 1180px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 12px 0;
+        flex-direction: column;
+      }
+
+      .navlinks {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .mosaic {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .photo,
+      .photo.large {
+        height: 230px;
+        grid-row: auto;
+      }
+
+      .date-strip,
+      .cards-grid,
+      .profile-grid,
+      .visa-grid,
+      .metric-grid,
+      .route-map {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-title {
+        display: block;
+      }
+
+      .detail-title p {
+        margin-top: 8px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 10px;
+      }
+
+      table {
+        min-width: 780px;
+      }
+
+      .compare-table {
+        overflow-x: auto;
+      }
+
+      .source-list {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="返回顶部"><span class="mark"></span><span>婚礼蜜月决策页</span></a>
+      <nav class="navlinks" aria-label="页面导航">
+        <a href="#summary">推荐</a>
+        <a href="#destinations">目的地</a>
+        <a href="#compare">对比表</a>
+        <a href="#gallery">详细清单</a>
+        <a href="#routes">路线图</a>
+        <a href="#visa">签证</a>
+        <a href="#plan">时间安排</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <h1><span>7.25-8.14</span><span><span class="nowrap">婚礼蜜月</span>目的地对比</span></h1>
+          <p class="lead">婚礼 7.29 在河南鹤壁举行，三个备选目的地按景点体验、双人成本、对华签证政策、中英文友好度和婚后执行难度综合评估。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#summary">看综合推荐</a>
+            <a class="btn" href="#gallery">看图片印象</a>
+          </div>
+          <div class="date-strip" aria-label="关键日期">
+            <div class="date-item"><strong>7.25</strong><span>开始请假，预留婚礼筹备与返乡缓冲</span></div>
+            <div class="date-item"><strong>7.29</strong><span>河南鹤壁婚礼日</span></div>
+            <div class="date-item"><strong>7.31-8.1</strong><span>建议休整后出发，降低体力透支</span></div>
+            <div class="date-item"><strong>8.10-8.12</strong><span>建议返程，留 2-3 天缓冲</span></div>
+          </div>
+        </div>
+        <div class="mosaic" aria-label="目的地照片拼图">
+          <figure class="photo large">
+            <img src="assets/bali-nusa-penida.jpg" alt="印尼巴厘岛努沙佩尼达海岸" />
+            <figcaption class="caption"><b>印尼：海岛度假综合感最强</b><span>巴厘岛 / 努沙佩尼达 / 可延伸科莫多</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/semporna-tun-sakaran.jpg" alt="马来西亚仙本那敦沙卡兰海洋公园" />
+            <figcaption class="caption"><b>仙本那：水下与跳岛第一梯队</b><span>潜水、海水颜色、离岛度假</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/busan-gamcheon.jpg" alt="韩国釜山甘川文化村" />
+            <figcaption class="caption"><b>釜山：签证已备，执行最稳</b><span>海滨城市、美食、轻松交通</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="shell">
+        <div class="section-head">
+          <h2>推荐结论</h2>
+          <p class="section-note">默认权重偏向蜜月氛围、景点丰富度和执行稳定性；下方可以切换偏好查看推荐变化。</p>
+        </div>
+        <div class="recommendation">
+          <article class="recommend-card" id="recommendCard">
+            <div class="recommend-title"><span class="rank-dot"></span>
+              <h3 id="recommendTitle">综合首选：印尼巴厘岛为主线</h3>
+            </div>
+            <p id="recommendCopy">巴厘岛在 8
+              月处于相对舒服的旱季，酒店与餐饮选择宽，英文服务成熟，既能住度假酒店，也能安排乌鲁瓦图、乌布、努沙佩尼达等照片感很强的行程。它比仙本那少一些转机和船程压力，比釜山更有传统蜜月海岛感。</p>
+            <div class="scoreline" id="scoreline" aria-label="推荐目的地评分">
+              <div class="score-row"><span>景点体验</span>
+                <div class="bar"><i style="--w:92%"></i></div><strong>9.2</strong>
+              </div>
+              <div class="score-row"><span>成本可控</span>
+                <div class="bar"><i style="--w:74%"></i></div><strong>7.4</strong>
+              </div>
+              <div class="score-row"><span>签证便利</span>
+                <div class="bar"><i style="--w:78%"></i></div><strong>7.8</strong>
+              </div>
+              <div class="score-row"><span>语言友好</span>
+                <div class="bar"><i style="--w:84%"></i></div><strong>8.4</strong>
+              </div>
+              <div class="score-row"><span>执行难度</span>
+                <div class="bar"><i style="--w:76%"></i></div><strong>7.6</strong>
+              </div>
+            </div>
+          </article>
+          <aside class="side-panel">
+            <h3>按你的优先级切换</h3>
+            <div class="mode-list">
+              <button class="mode-btn" type="button" data-mode="balanced" aria-pressed="true"><span>综合蜜月体验</span><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></button>
+              <button class="mode-btn" type="button" data-mode="visa" aria-pressed="false"><span>签证和执行最稳</span><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></button>
+              <button class="mode-btn" type="button" data-mode="sea" aria-pressed="false"><span>海岛和潜水优先</span><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></button>
+              <button class="mode-btn" type="button" data-mode="budget" aria-pressed="false"><span>控制预算优先</span><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations">
+      <div class="shell">
+        <div class="section-head">
+          <h2>三个目的地快速判断</h2>
+          <p class="section-note">成本为双人 6-8 晚粗估，不含婚礼本身支出；暑期、直飞余票、酒店档次会显著影响价格。</p>
+        </div>
+        <div class="cards-grid">
+          <article class="destination-card">
+            <div class="card-image"><img src="assets/semporna-sipadan.jpg" alt="马来西亚西巴丹海岛" /><span
+                class="tag">潜水海岛</span></div>
+            <div class="card-body">
+              <h3>马来西亚仙本那</h3>
+              <p>最大卖点是玻璃海、跳岛、浮潜/深潜和水屋。适合“蜜月要有顶级海水颜色”的路线，但从鹤壁婚礼后出发转机链条较长。</p>
+              <div class="metric-grid">
+                <div class="metric"><span>双人预算</span><strong>约 1.6-2.8 万+</strong></div>
+                <div class="metric"><span>签证</span><strong>马来西亚短期免签需复核</strong></div>
+                <div class="metric"><span>语言</span><strong>中文团多，离岛偏英文/马来语</strong></div>
+                <div class="metric"><span>适合</span><strong>潜水、跳岛、水屋</strong></div>
+              </div>
+              <div class="verdict">推荐给：愿意折腾交通，只想把海岛体验拉满的新人。</div>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <div class="card-image"><img src="assets/bali-uluwatu.jpg" alt="印尼巴厘岛乌鲁瓦图寺" /><span class="tag">综合首选</span>
+            </div>
+            <div class="card-body">
+              <h3>印尼：巴厘岛主线</h3>
+              <p>8 月通常是巴厘岛旅行舒适季，酒店、餐厅、包车、旅拍和海岛一日游选择成熟。可按预算从精品酒店到奢华别墅自由升级。</p>
+              <div class="metric-grid">
+                <div class="metric"><span>双人预算</span><strong>约 1.8-3.5 万</strong></div>
+                <div class="metric"><span>签证</span><strong>VOA / e-VOA 30 天</strong></div>
+                <div class="metric"><span>语言</span><strong>英文成熟，中文服务较常见</strong></div>
+                <div class="metric"><span>适合</span><strong>度假酒店、悬崖、乌布、海岛</strong></div>
+              </div>
+              <div class="verdict">综合推荐：蜜月感、照片感、服务成熟度最均衡。</div>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <div class="card-image"><img src="assets/busan-haeundae.jpg" alt="韩国釜山海云台海滩" /><span class="tag">执行稳妥</span>
+            </div>
+            <div class="card-body">
+              <h3>韩国釜山</h3>
+              <p>已有韩国签证时，釜山是执行风险最低的选择。海边城市、咖啡馆、韩餐、温泉和城市漫游舒服，但传统海岛蜜月感不如前两者。</p>
+              <div class="metric-grid">
+                <div class="metric"><span>双人预算</span><strong>约 1.4-2.6 万</strong></div>
+                <div class="metric"><span>签证</span><strong>你已持签证，最稳</strong></div>
+                <div class="metric"><span>语言</span><strong>中文标识较多，英文中等</strong></div>
+                <div class="metric"><span>适合</span><strong>城市海滨、美食、低压力旅行</strong></div>
+              </div>
+              <div class="verdict">推荐给：婚礼后想少折腾、少不确定性，吃逛拍照为主。</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <div class="shell">
+        <div class="section-head">
+          <h2>细项对比</h2>
+          <p class="section-note">这里把“好看”和“好执行”分开看，避免只被照片吸引而忽略婚礼后的体力与交通。</p>
+        </div>
+        <div class="compare-table" role="region" aria-label="目的地对比表" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>仙本那</th>
+                <th>印尼巴厘岛主线</th>
+                <th>韩国釜山</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>著名景点</td>
+                <td>西巴丹、马布岛、卡帕莱、敦沙卡兰海洋公园、珍珠岛视角。</td>
+                <td>乌鲁瓦图、乌布梯田、努沙佩尼达、金巴兰日落，可延伸科莫多或龙目岛。</td>
+                <td>海云台、广安里、甘川文化村、海东龙宫寺、松岛海上缆车。</td>
+              </tr>
+              <tr>
+                <td>蜜月氛围</td>
+                <td>海水震撼，离岛度假强；镇上配套普通，雨天替代活动少。</td>
+                <td>酒店、SPA、餐厅、旅拍、日落体验完整，适合两人慢节奏。</td>
+                <td>城市舒适度高，吃逛方便；更像轻松假期，不是典型热带蜜月。</td>
+              </tr>
+              <tr>
+                <td>旅游消费</td>
+                <td>机票转机与离岛酒店拉高预算；潜水、上岛许可和船程需单独算。</td>
+                <td>预算弹性最大；中高端酒店选择多，包车/餐饮价格带宽。</td>
+                <td>酒店和餐饮单价偏高但交通简单；签证已解决可减少沉没成本。</td>
+              </tr>
+              <tr>
+                <td>对华签证/入境</td>
+                <td>中国游客短期旅游入境政策较友好，仍需出发前查 MDAC、护照有效期和航司要求。</td>
+                <td>常见为 e-VOA/落地签，30 天可延；巴厘岛另有旅游税。</td>
+                <td>中国护照赴韩国本土通常需签证；你已有签证，核对有效期、停留期和入境次数即可。</td>
+              </tr>
+              <tr>
+                <td>中英文友好度</td>
+                <td>仙本那中文潜店/跳岛团不少；离岛员工更多用英文和马来语。</td>
+                <td>巴厘岛旅游业英文成熟，中文服务在热门酒店/包车/旅拍较常见。</td>
+                <td>景区中文标识和中文菜单较多，日常沟通建议配翻译 App。</td>
+              </tr>
+              <tr>
+                <td>婚礼后执行难度</td>
+                <td>最高：多段交通、船程、潜水计划受天气和许可影响。</td>
+                <td>中等：国际航班加本地包车，行程可松可紧。</td>
+                <td>最低：签证已备、城市交通好、雨天替代活动多。</td>
+              </tr>
+              <tr>
+                <td>一句话</td>
+                <td>海岛上限最高，但要有体力和预订能力。</td>
+                <td>综合最像“正式蜜月”，推荐作为首选方案。</td>
+                <td>最稳妥省心，适合婚礼后恢复型旅行。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>景点和酒店详细清单</h2>
+          <p class="section-note">每个目的地各列 10 个景点和 10 个酒店，卡片可点击跳转到官网或介绍页；图片优先使用开放图源或官网图，加载失败会自动回退到本地代表图。</p>
+        </div>
+        <div class="destination-switch" aria-label="切换目的地">
+          <button class="destination-tab" type="button" data-destination="malaysia" aria-pressed="true">马来西亚仙本那</button>
+          <button class="destination-tab" type="button" data-destination="indonesia"
+            aria-pressed="false">印尼巴厘岛线</button>
+          <button class="destination-tab" type="button" data-destination="korea" aria-pressed="false">韩国釜山</button>
+        </div>
+        <div class="detail-layout">
+          <div class="detail-block">
+            <div class="detail-title">
+              <h3 id="attractionTitle">马来西亚仙本那：10 个景点</h3>
+              <p id="attractionNote">海上跳岛和潜水点分布在 Semporna 周边海域，交通核心是 Tawau 机场和仙本那镇码头。</p>
+            </div>
+            <div class="profile-grid" id="attractionGrid" aria-live="polite"></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-title">
+              <h3 id="hotelTitle">马来西亚仙本那：10 个酒店</h3>
+              <p id="hotelNote">离岛度假村体验最好但交通和房量限制多；镇上酒店更适合作为前后过渡。</p>
+            </div>
+            <div class="profile-grid" id="hotelGrid" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="routes">
+      <div class="shell">
+        <div class="section-head">
+          <h2>景点游览路线图</h2>
+          <p class="section-note">路线按婚礼后 6-8 晚蜜月设计，重点考虑跨城市、跨岛船程、航班和体力恢复。</p>
+        </div>
+        <div class="route-card">
+          <div class="route-summary">
+            <div class="route-facts" id="routeFacts"></div>
+            <div>
+              <div class="route-map" id="routeMap" aria-live="polite"></div>
+              <div class="route-tip" id="routeTip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visa">
+      <div class="shell">
+        <div class="section-head">
+          <h2>签证与入境要点</h2>
+          <p class="section-note">最终以出发前官方页面、航空公司值机要求和护照实际条件为准。</p>
+        </div>
+        <div class="visa-grid">
+          <article class="visa-box">
+            <h3>马来西亚仙本那</h3>
+            <ul>
+              <li>中国普通护照短期旅游入境政策当前较友好，常见表述为 30 天免签；政策有阶段性，出发前务必复核。</li>
+              <li>通常需要护照 6 个月以上有效期、返程/续程机票、住宿信息，并按要求提交 <a href="https://imigresen-online.imi.gov.my/mdac/main"
+                  target="_blank" rel="noreferrer">MDAC</a>。</li>
+              <li>仙本那涉及潜水/上岛许可，尤其西巴丹名额紧张，和签证同样要提前确认。</li>
+            </ul>
+          </article>
+          <article class="visa-box">
+            <h3>印尼巴厘岛</h3>
+            <ul>
+              <li>中国游客旅游常用 <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer">e-VOA / VOA</a>，一般
+                30 天，可申请延长一次。</li>
+              <li>常见费用为 VOA 500,000 印尼盾/人；巴厘岛另有旅游税 150,000 印尼盾/人。</li>
+              <li>护照 6 个月以上有效期、返程/续程机票、住宿地址是基础要求。</li>
+            </ul>
+          </article>
+          <article class="visa-box">
+            <h3>韩国釜山</h3>
+            <ul>
+              <li>中国护照赴韩国本土通常需签证；你已经有签证，这是三个选项里最大确定性优势。</li>
+              <li>出发前核对签证有效期、入境次数、每次停留天数，确认覆盖 7.31-8.12 左右的旅行窗口。</li>
+              <li>可在 <a href="https://www.visa.go.kr/" target="_blank" rel="noreferrer">KOREA VISA PORTAL</a>
+                复核签证/入境信息；持有效签证通常无需另办 K-ETA。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan">
+      <div class="shell plan-band">
+        <div>
+          <h2>建议时间安排</h2>
+          <p class="section-note">不要把 7.30 立刻安排成长途国际飞行。婚礼后最容易低估的是体力、行李、证件和双方家庭收尾。</p>
+        </div>
+        <div class="timeline">
+          <div class="step"><strong>7.25-7.28：婚礼前置</strong><span>回鹤壁、确认婚礼物品、证件和蜜月行李分包。</span></div>
+          <div class="step"><strong>7.29：婚礼日</strong><span>当天不安排任何长途移动，把状态留给仪式和亲友。</span></div>
+          <div class="step"><strong>7.30-7.31：休整和转场</strong><span>建议从郑州/北京/上海等更合适口岸出发，先住一晚机场或城市酒店。</span></div>
+          <div class="step"><strong>8.1-8.8/8.10：蜜月主旅行</strong><span>巴厘岛建议 7-8 晚；仙本那至少 5-6 晚才值得折腾；釜山 5-7 晚很舒服。</span>
+          </div>
+          <div class="step"><strong>8.10-8.12：返程</strong><span>留出航班延误、天气、身体恢复和整理婚礼后事务的缓冲。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell source-box">
+        <h3>来源和复核入口</h3>
+        <ul class="source-list">
+          <li><a href="https://malaysiavisa.imi.gov.my/evisa/evisa.jsp" target="_blank" rel="noreferrer">Malaysia MyVISA
+              / 移民局签证入口</a></li>
+          <li><a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" rel="noreferrer">Malaysia Digital
+              Arrival Card</a></li>
+          <li><a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer">Indonesia eVisa / e-VOA</a></li>
+          <li><a href="https://lovebali.baliprov.go.id/" target="_blank" rel="noreferrer">Bali International Tourism
+              Levy</a></li>
+          <li><a href="https://www.visa.go.kr/" target="_blank" rel="noreferrer">KOREA VISA PORTAL</a></li>
+          <li>图片：Wikimedia Commons、Openverse/Flickr CC 图源、Mataking 和 Ananti / Bulgari 酒店官网开放图。</li>
+          <li>费用：按 2026 年暑期常见机票、酒店、餐饮与活动价格做人民币区间估算，预订前需用实时票价重算。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">建议下一步：确定“蜜月主诉求”是海岛潜水、奢华度假还是低压力休假，再用同一套日期去查实时航班和酒店总价。</div>
+  </footer>
+
+  <script>
+    const modes = {
+      balanced: {
+        title: '综合首选：印尼巴厘岛为主线',
+        copy: '巴厘岛在 8 月处于相对舒服的旱季，酒店与餐饮选择宽，英文服务成熟，既能住度假酒店，也能安排乌鲁瓦图、乌布、努沙佩尼达等照片感很强的行程。它比仙本那少一些转机和船程压力，比釜山更有传统蜜月海岛感。',
+        scores: [['景点体验', 92, '9.2'], ['成本可控', 74, '7.4'], ['签证便利', 78, '7.8'], ['语言友好', 84, '8.4'], ['执行难度', 76, '7.6']]
+      },
+      visa: {
+        title: '稳妥首选：韩国釜山',
+        copy: '你已经有韩国签证，釜山在签证不确定性、城市交通、雨天替代活动和婚礼后体力恢复方面最友好。它不是最强海岛目的地，但最适合作为“婚礼结束后不要再被复杂交通消耗”的方案。',
+        scores: [['景点体验', 78, '7.8'], ['成本可控', 76, '7.6'], ['签证便利', 94, '9.4'], ['语言友好', 80, '8.0'], ['执行难度', 88, '8.8']]
+      },
+      sea: {
+        title: '海岛潜水首选：马来西亚仙本那',
+        copy: '如果你们最在意的是海水颜色、浮潜深潜和水屋体验，仙本那的上限最高。代价是多段交通、离岛房量和潜水许可都要提前锁定，婚礼后最好不要排太紧。',
+        scores: [['景点体验', 96, '9.6'], ['成本可控', 70, '7.0'], ['签证便利', 84, '8.4'], ['语言友好', 76, '7.6'], ['执行难度', 64, '6.4']]
+      },
+      budget: {
+        title: '控预算建议：釜山或巴厘岛中档方案',
+        copy: '绝对低价不是这三个目的地的强项。若签证已办且能买到合适机票，釜山总价更可控；若想保留蜜月度假感，巴厘岛选中档酒店加两晚升级房型，比全程奢华酒店更划算。',
+        scores: [['景点体验', 82, '8.2'], ['成本可控', 82, '8.2'], ['签证便利', 86, '8.6'], ['语言友好', 79, '7.9'], ['执行难度', 82, '8.2']]
+      }
+    };
+
+    const destinationData = {
+      malaysia: {
+        label: '马来西亚仙本那',
+        fallback: 'assets/semporna-tun-sakaran.jpg',
+        attractionNote: '海上跳岛和潜水点分布在 Semporna 周边海域，交通核心是 Tawau 机场和仙本那镇码头。',
+        hotelNote: '离岛度假村体验最好但交通和房量限制多；镇上酒店更适合作为前后过渡。',
+        attractions: [
+          { name: 'Tun Sakaran Marine Park', cn: '敦沙卡兰海洋公园', image: 'assets/semporna-tun-sakaran.jpg', link: 'https://en.wikipedia.org/wiki/Tun_Sakaran_Marine_Park', desc: '仙本那最经典的跳岛区域，海色层次强，适合安排观景、浮潜和轻徒步。', meta: ['跳岛', '码头出海'] },
+          { name: 'Bohey Dulang Island', cn: '波黑杜朗岛', image: 'https://live.staticflickr.com/6060/6374500527_8c7c81aa05_b.jpg', link: 'https://en.wikipedia.org/wiki/Bohey_Dulang_Island', desc: '常与海洋公园同日安排，登高俯瞰泻湖，是仙本那照片感最强的视角之一。', meta: ['徒步观景', '船程'] },
+          { name: 'Sipadan Island', cn: '西巴丹岛', image: 'assets/semporna-sipadan.jpg', link: 'https://en.wikipedia.org/wiki/Sipadan', desc: '世界级潜水目的地，名额和许可证紧张，深潜新人需要提前确认资质与排期。', meta: ['深潜', '需许可'] },
+          { name: 'Mabul Island', cn: '马布岛', image: 'https://live.staticflickr.com/1087/5113920618_c59a331477_b.jpg', link: 'https://en.wikipedia.org/wiki/Mabul_Island', desc: '潜店和度假村集中，适合作为离岛住宿基地，也适合浮潜和水下摄影。', meta: ['离岛住宿', '潜水'] },
+          { name: 'Kapalai', cn: '卡帕莱', image: 'assets/semporna-kapalai-resort.jpg', link: 'https://en.wikipedia.org/wiki/Kapalai', desc: '沙洲和水屋构成仙本那标志性画面，适合蜜月感强的水上度假体验。', meta: ['水屋', '浮潜'] },
+          { name: 'Mataking Island', cn: '马达京岛', image: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Mataking_Island_Sabah.jpg', link: 'https://en.wikipedia.org/wiki/Mataking_Island', desc: '更偏私密离岛，适合把节奏放慢，安排海滩、浮潜和度假村晚餐。', meta: ['私密', '离岛'] },
+          { name: 'Pom Pom Island', cn: '邦邦岛', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Turtle_beach_Pom_Pom_Island.JPG', link: 'https://en.wikipedia.org/wiki/Pom_Pom_Island', desc: '沙滩与浅海休闲感强，适合不想每天高强度潜水的新人。', meta: ['沙滩', '轻松'] },
+          { name: 'Sibuan Island', cn: '斯布安岛', image: 'assets/semporna-tun-sakaran.jpg', link: 'https://www.sabahtourism.com/destination/sibuan-island/', desc: '常被安排在跳岛线路里，海水清透，适合浮潜和拍照，行程受天气影响明显。', meta: ['浮潜', '一日游'] },
+          { name: 'Timba Timba Island', cn: '汀巴汀巴岛', image: 'https://live.staticflickr.com/3591/3343066735_3bca968d8b_b.jpg', link: 'https://www.sabahtourism.com/', desc: '长线跳岛里常见的白沙和浅海体验点，适合作为马达京方向的一日游组合。', meta: ['白沙', '跳岛'] },
+          { name: 'Tawau Hills Park', cn: '斗湖山国家公园', image: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Table_Waterfall_at_Tawau_Hills_Park_-_panoramio.jpg', link: 'https://en.wikipedia.org/wiki/Tawau_Hills_Park', desc: '如果天气不适合出海，可在斗湖方向增加雨林、瀑布和温泉替代行程。', meta: ['陆地备选', '跨城'] }
+        ],
+        hotels: [
+          { name: 'Sipadan-Kapalai Dive Resort', cn: '卡帕莱水上度假村', image: 'assets/semporna-kapalai-resort.jpg', link: 'https://www.sipadan-kapalai.com/', desc: '仙本那水屋代表，适合把 2-3 晚预算用在核心蜜月体验上。', meta: ['水屋', '潜水'] },
+          { name: 'The Reef Dive Resort at Mataking', cn: '马达京岛度假村', image: 'assets/semporna-mataking.jpg', link: 'https://mataking.com/', desc: '私密离岛氛围更强，适合慢住、浮潜和海边晚餐。', meta: ['离岛', '私密'] },
+          { name: 'Mabul Water Bungalows', cn: '马布水上屋', image: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Close-Ribbed_Ark%2C_Mabul_Water_Bungalows%2C_Sabah%2C_Malaysia%2C_88100%2C_Malaysia%2C_88100%2C_Sabah%2C_Malaysia_imported_from_iNaturalist_photo_280589656.jpg', link: 'https://www.mabulwaterbungalows.com/', desc: '靠近西巴丹潜水资源，适合潜水和水上屋组合。', meta: ['水屋', '马布岛'] },
+          { name: 'Sipadan-Mabul Resort', cn: '西巴丹马布度假村', image: 'https://live.staticflickr.com/1087/5113920618_c59a331477_b.jpg', link: 'https://www.sipadanmabulresort.com/', desc: '马布岛经典潜水度假村，适合把深潜课程或潜水日打包安排。', meta: ['潜水', '马布岛'] },
+          { name: 'Seaventures Dive Rig', cn: 'Seaventures 海上平台', image: 'assets/semporna-sipadan.jpg', link: 'https://seaventuresdive.com/', desc: '风格特别的海上平台住宿，偏潜水玩家，不是传统奢华酒店。', meta: ['特别体验', '潜水'] },
+          { name: 'Scuba Junkie Mabul Beach Resort', cn: 'Scuba Junkie 马布海滩度假村', image: 'assets/semporna-tun-sakaran.jpg', link: 'https://www.scubajunkie.com/mabul-beach-resort/', desc: '潜水氛围成熟，适合把出海、课程和住宿一站式打包。', meta: ['潜店', '马布岛'] },
+          { name: 'Pom Pom Island Resort', cn: '邦邦岛度假村', image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Blue_ribbon_Eel_fish_on_Pom_Pom_Island%2C_Celebes_resort%2C_Sabah.jpg', link: 'https://pompomisland.com/', desc: '比仙本那镇安静，适合想要轻松海岛和低密度住宿的安排。', meta: ['沙滩', '离岛'] },
+          { name: 'Maglami-Lami Water House', cn: 'Maglami-Lami 水屋', image: 'assets/semporna-kapalai-resort.jpg', link: 'https://maglamiwaterhouse.com/', desc: '仙本那周边水屋选择之一，适合作为卡帕莱满房时的替代。', meta: ['水屋', '替代'] },
+          { name: 'Seafest Hotel Semporna', cn: '仙本那海丰酒店', image: 'https://live.staticflickr.com/6220/6347954626_78a83c6017.jpg', link: 'https://www.tripadvisor.com/Search?q=Seafest%20Hotel%20Semporna', desc: '镇上过渡型酒店，适合到达日或出海前后住一晚。', meta: ['镇上', '过渡'] },
+          { name: 'Wave View Hotel Semporna', cn: 'Wave View Hotel', image: 'assets/semporna-tun-sakaran.jpg', link: 'https://www.tripadvisor.com/Search?q=Wave%20View%20Hotel%20Semporna', desc: '镇中心便利型选择，适合控制预算和减少码头转场时间。', meta: ['镇上', '便利'] }
+        ],
+        route: {
+          facts: [['建议天数', '6-7 晚，至少 2 晚离岛更值得'], ['交通核心', '国内口岸飞吉隆坡/亚庇/斗湖，再车至仙本那码头'], ['跨城压力', '斗湖机场到仙本那约 1.5-2 小时车程，岛屿之间主要靠船']],
+          stops: [
+            ['D1', '抵达斗湖 -> 仙本那镇', '住镇上，整理潜水证件和上岛行李'],
+            ['D2', '敦沙卡兰 / 波黑杜朗', '跳岛加观景，先适应船程和海况'],
+            ['D3-D4', '马布 / 卡帕莱', '住离岛水屋或潜水度假村'],
+            ['D5', '西巴丹或马达京方向', '有资质再排深潜；否则浮潜和海滩'],
+            ['D6', '斗湖或镇上缓冲', '天气备选可去斗湖山国家公园']
+          ],
+          tip: '仙本那不要每天换岛住宿。推荐“镇上 1-2 晚 + 离岛 3 晚 + 返程缓冲 1 晚”，否则船程和行李会消耗婚礼后的体力。'
+        }
+      },
+      indonesia: {
+        label: '印尼巴厘岛线',
+        fallback: 'assets/bali-nusa-penida.jpg',
+        attractionNote: '巴厘岛景点分散在南部海岸、乌布山区和离岛，若延伸科莫多/龙目岛，需要额外国内航班或船程。',
+        hotelNote: '建议南部海边 3-4 晚加乌布 2-3 晚；预算升级可集中在最后两晚。',
+        attractions: [
+          { name: 'Uluwatu Temple', cn: '乌鲁瓦图寺', image: 'assets/bali-uluwatu.jpg', link: 'https://en.wikipedia.org/wiki/Uluwatu_Temple', desc: '悬崖、海景和日落表演是巴厘岛南部最有蜜月照片感的组合。', meta: ['南部', '日落'] },
+          { name: 'Ubud', cn: '乌布', image: 'https://live.staticflickr.com/8167/7260959314_1c9a48424d_b.jpg', link: 'https://en.wikipedia.org/wiki/Ubud', desc: '稻田、SPA、手工艺和森林度假酒店集中，适合婚礼后慢下来。', meta: ['山区', '慢住'] },
+          { name: 'Tegallalang Rice Terrace', cn: '德格拉朗梯田', image: 'assets/bali-rice-terrace.jpg', link: 'https://en.wikipedia.org/wiki/Tegallalang', desc: '乌布北部经典梯田景观，建议清晨出发，避开人流和高温。', meta: ['乌布北', '半日'] },
+          { name: 'Nusa Penida', cn: '努沙佩尼达', image: 'assets/bali-nusa-penida.jpg', link: 'https://en.wikipedia.org/wiki/Nusa_Penida', desc: '海岸线壮观但车船消耗大，适合安排成一日游或住一晚。', meta: ['离岛', '船程'] },
+          { name: 'Mount Batur', cn: '巴图尔火山', image: 'https://live.staticflickr.com/8237/8536304824_5f592f0731_b.jpg', link: 'https://en.wikipedia.org/wiki/Mount_Batur', desc: '日出徒步很出片，但需要凌晨出发，婚礼后体力不足可改成观景餐厅。', meta: ['北部', '早起'] },
+          { name: 'Tanah Lot', cn: '海神庙', image: 'https://live.staticflickr.com/7400/8973296509_b2d50629f6_b.jpg', link: 'https://en.wikipedia.org/wiki/Tanah_Lot', desc: '西海岸日落名片，可与苍古、塞米亚克同线安排。', meta: ['西海岸', '日落'] },
+          { name: 'Seminyak', cn: '塞米亚克', image: 'https://live.staticflickr.com/1467/23455302064_f8e2432fb2_b.jpg', link: 'https://en.wikipedia.org/wiki/Seminyak', desc: '餐厅、海滩俱乐部和精品酒店集中，适合抵达后先恢复状态。', meta: ['餐饮', '海滩'] },
+          { name: 'Jimbaran Bay', cn: '金巴兰海湾', image: 'https://live.staticflickr.com/7347/16392771680_2d6f85cda5_b.jpg', link: 'https://en.wikipedia.org/wiki/Jimbaran', desc: '海鲜晚餐和夕阳体验成熟，适合安排轻松的第一晚或最后一晚。', meta: ['南部', '晚餐'] },
+          { name: 'Tirta Empul', cn: '圣泉寺', image: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Tirta_Empul_Temple_Bali.jpg', link: 'https://en.wikipedia.org/wiki/Tirta_Empul', desc: '乌布周边文化景点，可与梯田、咖啡园串联成北线半日。', meta: ['文化', '乌布线'] },
+          { name: 'Komodo National Park', cn: '科莫多国家公园', image: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Komodo_dragon_at_Komodo_National_Park.jpg', link: 'https://en.wikipedia.org/wiki/Komodo_National_Park', desc: '从巴厘岛飞拉布汉巴焦延伸，适合有 9-10 天且愿意跨岛的进阶方案。', meta: ['跨岛', '航班'] }
+        ],
+        hotels: [
+          { name: 'AYANA Resort Bali', cn: 'AYANA 巴厘岛', image: 'assets/bali-ayana.jpg', link: 'https://www.ayana.com/bali/ayana-resort-bali/', desc: '大型度假区和日落酒吧成熟，适合第一段海边度假。', meta: ['金巴兰', '大型度假区'] },
+          { name: 'Bulgari Resort Bali', cn: '宝格丽巴厘岛', image: 'assets/bali-bulgari.jpg', link: 'https://www.bulgarihotels.com/en_US/bali', desc: '悬崖海景和私密感强，适合预算升级的纪念夜。', meta: ['乌鲁瓦图', '奢华'] },
+          { name: 'Four Seasons Resort Bali at Sayan', cn: '四季乌布 Sayan', image: 'https://live.staticflickr.com/4059/4646776493_95ff0a15ab_b.jpg', link: 'https://www.fourseasons.com/sayan/', desc: '乌布山谷度假代表，适合安静、SPA 和慢节奏。', meta: ['乌布', '山谷'] },
+          { name: 'Mandapa, a Ritz-Carlton Reserve', cn: 'Mandapa 丽思卡尔顿隐世', image: 'assets/bali-rice-terrace.jpg', link: 'https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/overview/', desc: '乌布高端度假选择，预算高但蜜月仪式感强。', meta: ['乌布', '奢华'] },
+          { name: 'Alila Villas Uluwatu', cn: '阿丽拉乌鲁瓦图', image: 'https://live.staticflickr.com/2691/4186415586_9766811cb8_b.jpg', link: 'https://www.hyatt.com/alila/uluwatu', desc: '现代悬崖建筑和海景泳池，是南部高端酒店代表。', meta: ['乌鲁瓦图', '悬崖'] },
+          { name: 'The Mulia, Mulia Resort & Villas', cn: '穆丽雅度假村', image: 'https://live.staticflickr.com/2846/9482738387_9e9e8556de_b.jpg', link: 'https://www.themulia.com/bali/', desc: '努沙杜瓦大型海滨度假区，服务稳定，适合不想折腾。', meta: ['努沙杜瓦', '海滨'] },
+          { name: 'Capella Ubud', cn: '嘉佩乐乌布', image: 'assets/bali-rice-terrace.jpg', link: 'https://capellahotels.com/en/capella-ubud', desc: '帐篷别墅和森林体验特别，适合追求独特住宿记忆。', meta: ['乌布', '森林'] },
+          { name: 'COMO Shambhala Estate', cn: 'COMO 香巴拉', image: 'https://live.staticflickr.com/2734/5720469931_4d2205b70d_b.jpg', link: 'https://www.comohotels.com/bali/como-shambhala-estate', desc: '健康疗愈和度假结合，适合婚礼后恢复型蜜月。', meta: ['乌布', '疗愈'] },
+          { name: 'Six Senses Uluwatu', cn: '六善乌鲁瓦图', image: 'https://live.staticflickr.com/65535/52587257873_f7c11f373e_b.jpg', link: 'https://www.sixsenses.com/en/resorts/uluwatu-bali/', desc: '悬崖海景、SPA 和别墅体验成熟，适合最后两晚升级。', meta: ['乌鲁瓦图', 'SPA'] },
+          { name: 'W Bali - Seminyak', cn: 'W 巴厘岛塞米亚克', image: 'https://live.staticflickr.com/7132/7070540061_6450a90e0e_b.jpg', link: 'https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/overview/', desc: '年轻、热闹、餐饮方便，适合喜欢海滩俱乐部和夜生活。', meta: ['塞米亚克', '热闹'] }
+        ],
+        route: {
+          facts: [['建议天数', '7-8 晚最舒适，跨科莫多需 9-10 晚'], ['交通核心', '抵达登巴萨机场，岛内包车效率最高'], ['跨城压力', '南部到乌布约 1.5-2.5 小时；努沙佩尼达需船程；科莫多需飞行']],
+          stops: [
+            ['D1-D2', '塞米亚克 / 金巴兰', '抵达后先住海边，安排日落和轻松餐厅'],
+            ['D3', '乌鲁瓦图南线', '乌鲁瓦图寺、悬崖酒店、金巴兰晚餐'],
+            ['D4-D5', '乌布', '梯田、圣泉寺、SPA 和酒店慢住'],
+            ['D6', '努沙佩尼达', '一日游或住一晚，避免和火山同日'],
+            ['D7-D8', '努沙杜瓦 / 乌鲁瓦图升级', '最后两晚选高等级酒店，留足返程缓冲']
+          ],
+          tip: '巴厘岛不要把“火山日出、努沙佩尼达、乌布北线”连续排满。婚礼后更建议海边恢复、乌布慢住、最后升级酒店三段式。'
+        }
+      },
+      korea: {
+        label: '韩国釜山',
+        fallback: 'assets/busan-haeundae.jpg',
+        attractionNote: '釜山景点沿海岸和地铁线展开，海云台/广安里在东部，南浦洞/札嘎其在中部，跨区交通比海岛轻松。',
+        hotelNote: '建议住海云台或广安里看海；若重视购物和夜市，可把前后各 1-2 晚放在西面/南浦洞。',
+        attractions: [
+          { name: 'Haeundae Beach', cn: '海云台海水浴场', image: 'assets/busan-haeundae.jpg', link: 'https://en.wikipedia.org/wiki/Haeundae_Beach', desc: '釜山最成熟的海滨度假片区，酒店、餐厅和夜景都方便。', meta: ['海边', '住宿核心'] },
+          { name: 'Gwangalli Beach', cn: '广安里海滩', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Gwangalli_Beach_and_Gwangan_Bridge_Busan.jpg/1280px-Gwangalli_Beach_and_Gwangan_Bridge_Busan.jpg', link: 'https://en.wikipedia.org/wiki/Gwangalli_Beach', desc: '看广安大桥夜景的代表区域，适合晚餐和夜间散步。', meta: ['夜景', '餐饮'] },
+          { name: 'Gamcheon Culture Village', cn: '甘川文化村', image: 'assets/busan-gamcheon.jpg', link: 'https://en.wikipedia.org/wiki/Gamcheon_Culture_Village', desc: '彩色山城和小店集中，适合半日拍照，但坡路较多。', meta: ['拍照', '坡路'] },
+          { name: 'Haedong Yonggungsa', cn: '海东龙宫寺', image: 'assets/busan-yonggungsa.jpg', link: 'https://en.wikipedia.org/wiki/Haedong_Yonggungsa', desc: '靠海寺庙，建议清晨从海云台出发，避开拥挤。', meta: ['东部', '清晨'] },
+          { name: 'Jagalchi Market', cn: '札嘎其市场', image: 'https://live.staticflickr.com/5100/5452260063_14fdafa62f_b.jpg', link: 'https://en.wikipedia.org/wiki/Jagalchi_Market', desc: '海鲜市场和南浦洞商圈相邻，适合城市美食线。', meta: ['美食', '南浦洞'] },
+          { name: 'Busan Tower', cn: '釜山塔 / 龙头山公园', image: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Busan-port-from-Busan-tower-2.jpg', link: 'https://en.wikipedia.org/wiki/Busan_Tower', desc: '看港口城市景观，适合和 BIFF 广场、札嘎其市场同线。', meta: ['城市景观', '中区'] },
+          { name: 'Songdo Marine Cable Car', cn: '松岛海上缆车', image: 'assets/busan-yonggungsa.jpg', link: 'https://en.busanaircruise.co.kr/', desc: '海上缆车和松岛海岸散步，可接在南浦洞半日后。', meta: ['缆车', '海岸'] },
+          { name: 'Beomeosa', cn: '梵鱼寺', image: 'https://live.staticflickr.com/1345/4599902215_8400792e3e_b.jpg', link: 'https://en.wikipedia.org/wiki/Beomeosa', desc: '釜山北部山寺，适合想增加文化和安静感的一天。', meta: ['北部', '文化'] },
+          { name: 'Dongbaekseom', cn: '冬柏岛 / APEC 世峰楼', image: 'https://live.staticflickr.com/2504/4123573293_3ba229aba4_b.jpg', link: 'https://en.wikipedia.org/wiki/Dongbaekseom', desc: '海云台旁边的海岸步道，适合不赶路的黄昏散步。', meta: ['步道', '海云台'] },
+          { name: 'Taejongdae', cn: '太宗台', image: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Lighthouse_at_Taejongdae%2C_Busan.jpg', link: 'https://en.wikipedia.org/wiki/Taejongdae', desc: '海岸悬崖和灯塔景观，位置较远，建议与影岛线路单独安排。', meta: ['影岛', '跨区'] }
+        ],
+        hotels: [
+          { name: 'Paradise Hotel Busan', cn: '釜山天堂酒店', image: 'assets/busan-paradise-hotel.jpg', link: 'https://www.busanparadisehotel.co.kr/front/en/main', desc: '海云台一线海景和温泉体验成熟，是轻松蜜月的稳妥选择。', meta: ['海云台', '温泉'] },
+          { name: 'Ananti at Busan Cove', cn: 'Ananti at Busan Cove', image: 'assets/busan-ananti.jpg', link: 'https://www.ananti.kr/en/busan/index.asp', desc: '远离市区的海边度假感更强，适合慢住和拍照。', meta: ['机张', '度假'] },
+          { name: 'SIGNIEL Busan', cn: '釜山 Signiel', image: 'assets/busan-haeundae.jpg', link: 'https://www.lottehotel.com/busan-signiel/en.html', desc: '高楼海景和服务稳定，适合作为海云台高端选项。', meta: ['海云台', '高端'] },
+          { name: 'Park Hyatt Busan', cn: '釜山柏悦', image: 'https://live.staticflickr.com/4531/39032929201_008e3fac1b_b.jpg', link: 'https://www.hyatt.com/park-hyatt/en-US/busph-park-hyatt-busan', desc: '广安大桥视角好，适合重视夜景和现代感的安排。', meta: ['水营湾', '夜景'] },
+          { name: 'The Westin Josun Busan', cn: '威斯汀朝鲜釜山', image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/The_Westin_Josun_Busan.jpg', link: 'https://www.marriott.com/en-us/hotels/puswi-the-westin-josun-busan/overview/', desc: '海云台经典海边酒店，步行到冬柏岛和海滩都方便。', meta: ['海云台', '经典'] },
+          { name: 'Lotte Hotel Busan', cn: '釜山乐天酒店', image: 'assets/busan-gamcheon.jpg', link: 'https://www.lottehotel.com/busan-hotel/en.html', desc: '西面商圈位置便利，适合购物、地铁换乘和雨天活动。', meta: ['西面', '购物'] },
+          { name: 'Shilla Stay Haeundae', cn: '新罗舒泰海云台', image: 'assets/busan-haeundae.jpg', link: 'https://www.shillastay.com/haeundae/index.do', desc: '海云台性价比较好的商务型选择，适合控制预算。', meta: ['海云台', '性价比'] },
+          { name: 'Grand Josun Busan', cn: '釜山 Grand Josun', image: 'assets/busan-haeundae.jpg', link: 'https://gjb.josunhotel.com/', desc: '海云台核心位置，适合海边、餐饮和散步都要方便的路线。', meta: ['海云台', '便利'] },
+          { name: 'Haeundae Centum Hotel', cn: '海云台 Centum Hotel', image: 'assets/busan-yonggungsa.jpg', link: 'https://www.tripadvisor.com/Search?q=Haeundae%20Centum%20Hotel', desc: '靠近 Centum City，适合购物、展馆和交通便利优先。', meta: ['Centum', '购物'] },
+          { name: 'Fairfield by Marriott Busan', cn: '釜山万枫酒店', image: 'assets/busan-haeundae.jpg', link: 'https://www.marriott.com/en-us/hotels/pusfb-fairfield-busan/overview/', desc: '位置实用、预算友好，适合作为前后过渡或控预算方案。', meta: ['海云台', '预算'] }
+        ],
+        route: {
+          facts: [['建议天数', '5-7 晚，已有签证时执行最稳'], ['交通核心', '金海机场/釜山站进出，市内地铁和打车组合'], ['跨区压力', '海云台到南浦洞约 45-70 分钟；机张/太宗台建议单独半日']],
+          stops: [
+            ['D1', '抵达 -> 海云台', '入住海边，冬柏岛散步恢复体力'],
+            ['D2', '海云台东线', '海东龙宫寺、海云台、海边晚餐'],
+            ['D3', '广安里 / Centum', '咖啡、购物、广安大桥夜景'],
+            ['D4', '南浦洞 / 甘川 / 札嘎其', '城市美食和拍照同线安排'],
+            ['D5-D6', '太宗台或梵鱼寺', '二选一做慢节奏文化/海岸日，最后留购物缓冲']
+          ],
+          tip: '釜山最怕每天东奔西跑。建议住海云台连续 3-4 晚，再用一天集中去南浦洞/甘川/札嘎其，远一点的太宗台和梵鱼寺二选一。'
+        }
+      }
+    };
+
+    const buttons = document.querySelectorAll('.mode-btn');
+    const title = document.getElementById('recommendTitle');
+    const copy = document.getElementById('recommendCopy');
+    const scoreline = document.getElementById('scoreline');
+    const destinationTabs = document.querySelectorAll('.destination-tab');
+    const attractionTitle = document.getElementById('attractionTitle');
+    const attractionNote = document.getElementById('attractionNote');
+    const attractionGrid = document.getElementById('attractionGrid');
+    const hotelTitle = document.getElementById('hotelTitle');
+    const hotelNote = document.getElementById('hotelNote');
+    const hotelGrid = document.getElementById('hotelGrid');
+    const routeFacts = document.getElementById('routeFacts');
+    const routeMap = document.getElementById('routeMap');
+    const routeTip = document.getElementById('routeTip');
+
+    const cardTemplate = (item, fallback, typeLabel) => `
+      <a class="profile-card" href="${item.link}" target="_blank" rel="noreferrer">
+        <div class="thumb"><img src="${item.image}" alt="${item.cn || item.name}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'" /></div>
+        <div class="copy">
+          <h4>${item.cn}</h4>
+          <p>${item.name}</p>
+          <p>${item.desc}</p>
+          <div class="meta">${item.meta.map((tag) => `<span>${tag}</span>`).join('')}</div>
+          <div class="mini">${typeLabel} · 点击查看官网/介绍</div>
+        </div>
+      </a>
+    `;
+
+    const renderDestination = (key) => {
+      const selected = destinationData[key];
+      attractionTitle.textContent = `${selected.label}：10 个景点`;
+      attractionNote.textContent = selected.attractionNote;
+      hotelTitle.textContent = `${selected.label}：10 个酒店`;
+      hotelNote.textContent = selected.hotelNote;
+      attractionGrid.innerHTML = selected.attractions.map((item) => cardTemplate(item, selected.fallback, '景点')).join('');
+      hotelGrid.innerHTML = selected.hotels.map((item) => cardTemplate(item, selected.fallback, '酒店')).join('');
+      routeFacts.innerHTML = selected.route.facts.map(([label, value]) => `
+        <div class="route-fact"><span>${label}</span><strong>${value}</strong></div>
+      `).join('');
+      routeMap.innerHTML = selected.route.stops.map(([day, title, detail]) => `
+        <div class="route-node" data-day="${day}"><strong>${title}</strong><span>${detail}</span></div>
+      `).join('');
+      routeTip.textContent = selected.route.tip;
+    };
+
+    destinationTabs.forEach((button) => {
+      button.addEventListener('click', () => {
+        destinationTabs.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        renderDestination(button.dataset.destination);
+      });
+    });
+
+    renderDestination('malaysia');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        const selected = modes[button.dataset.mode];
+        title.textContent = selected.title;
+        copy.textContent = selected.copy;
+        scoreline.innerHTML = selected.scores.map(([label, width, score]) => `
+          <div class="score-row"><span>${label}</span><div class="bar"><i style="--w:${width}%"></i></div><strong>${score}</strong></div>
+        `).join('');
+      });
+    });
+  </script>
+</body>
+
+</html>
