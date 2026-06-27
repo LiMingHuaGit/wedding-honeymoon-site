@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7.25-8.14 婚礼蜜月目的地对比</title>
+  <title>7.25-8.14 婚礼蜜月仙本那规划</title>
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230f766e'/%3E%3Cstop offset='.5' stop-color='%233f82bf'/%3E%3Cstop offset='1' stop-color='%23df6b5d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='29' fill='url(%23g)'/%3E%3Cpath d='M21 35c7 9 15 9 22 0 4-6 1-14-6-14-3 0-5 2-5 2s-2-2-5-2c-7 0-10 8-6 14z' fill='white'/%3E%3C/svg%3E" />
   <style>
@@ -27,6 +27,10 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     html {
@@ -103,6 +107,41 @@
       color: var(--muted);
       font-size: 14px;
       white-space: nowrap;
+    }
+
+    .nav-stack {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .top-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .page-tab {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .page-tab[aria-selected="true"] {
+      color: #fff;
+      background: var(--teal-dark);
+      border-color: var(--teal-dark);
     }
 
     .navlinks a {
@@ -650,6 +689,152 @@
       font-weight: 700;
     }
 
+    .planner-hero {
+      padding: 38px 0 34px;
+      background:
+        linear-gradient(180deg, rgba(246, 250, 248, 0.94), rgba(238, 247, 242, 0.78)),
+        url("assets/semporna-tun-sakaran.jpg") center/cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .planner-hero .lead {
+      max-width: 800px;
+    }
+
+    .planner-kpis,
+    .planner-grid,
+    .route-options,
+    .stay-grid,
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .planner-kpis {
+      margin-top: 26px;
+    }
+
+    .kpi-card,
+    .planner-card,
+    .route-option,
+    .stay-card,
+    .check-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 28px rgba(18, 40, 36, 0.06);
+    }
+
+    .kpi-card,
+    .planner-card,
+    .route-option,
+    .stay-card,
+    .check-card {
+      padding: 16px;
+    }
+
+    .kpi-card span,
+    .planner-card span,
+    .route-option span,
+    .stay-card span,
+    .check-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .kpi-card strong,
+    .planner-card strong,
+    .route-option strong,
+    .stay-card strong,
+    .check-card strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .planner-card p,
+    .route-option p,
+    .stay-card p,
+    .check-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .route-option.recommended {
+      border-color: rgba(15, 118, 110, 0.45);
+      background: #f5fbf8;
+    }
+
+    .planner-table {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 10px 28px rgba(18, 40, 36, 0.06);
+    }
+
+    .planner-table td:first-child {
+      width: 118px;
+      color: var(--teal-dark);
+    }
+
+    .planner-table td:nth-child(2) {
+      font-weight: 800;
+    }
+
+    .planner-table td:nth-child(3) {
+      color: var(--muted);
+    }
+
+    .money-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .money-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 12px 35px rgba(18, 40, 36, 0.08);
+    }
+
+    .money-card header {
+      padding: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--teal-dark), var(--sky));
+    }
+
+    .money-card:nth-child(2) header {
+      background: linear-gradient(135deg, #315f72, var(--teal));
+    }
+
+    .money-card:nth-child(3) header {
+      background: linear-gradient(135deg, #253f5f, var(--coral));
+    }
+
+    .money-card h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .money-card header p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 13px;
+    }
+
+    .money-card .budget-body {
+      padding: 16px;
+    }
+
     .gallery-section {
       background: #ffffff;
       border-block: 1px solid var(--line);
@@ -837,8 +1022,7 @@
       background: #fff;
     }
 
-    .route-node::before {
-      content: attr(data-day);
+    .route-node .route-day {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -993,7 +1177,13 @@
 
       .hero-grid,
       .recommendation,
-      .plan-band {
+      .plan-band,
+      .planner-kpis,
+      .planner-grid,
+      .route-options,
+      .stay-grid,
+      .check-grid,
+      .money-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1004,6 +1194,7 @@
 
       .cards-grid,
       .budget-grid,
+      .money-grid,
       .profile-grid,
       .visa-grid {
         grid-template-columns: 1fr 1fr;
@@ -1037,6 +1228,15 @@
         flex-direction: column;
       }
 
+      .nav-stack {
+        width: 100%;
+        justify-items: start;
+      }
+
+      .top-tabs {
+        justify-content: flex-start;
+      }
+
       .navlinks {
         width: 100%;
         overflow-x: auto;
@@ -1062,6 +1262,12 @@
       .date-strip,
       .cards-grid,
       .budget-grid,
+      .money-grid,
+      .planner-kpis,
+      .planner-grid,
+      .route-options,
+      .stay-grid,
+      .check-grid,
       .profile-grid,
       .visa-grid,
       .metric-grid,
@@ -1104,25 +1310,42 @@
   <header class="topbar">
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="返回顶部"><span class="mark"></span><span>婚礼蜜月决策页</span></a>
-      <nav class="navlinks" aria-label="页面导航">
-        <a href="#summary">推荐</a>
-        <a href="#destinations">目的地</a>
-        <a href="#compare">对比表</a>
-        <a href="#budget">费用预估</a>
-        <a href="#gallery">详细清单</a>
-        <a href="#routes">路线图</a>
-        <a href="#visa">签证</a>
-        <a href="#plan">时间安排</a>
-      </nav>
+      <div class="nav-stack">
+        <div class="top-tabs" role="tablist" aria-label="内容页切换">
+          <button class="page-tab" type="button" role="tab" aria-selected="true" aria-controls="decisionPage"
+            data-page-tab="decision">决策推荐</button>
+          <button class="page-tab" type="button" role="tab" aria-selected="false" aria-controls="sempornaPage"
+            data-page-tab="semporna">仙本那流程规划</button>
+        </div>
+        <nav class="navlinks" aria-label="决策推荐导航" data-page-nav="decision">
+          <a href="#summary">推荐</a>
+          <a href="#destinations">目的地</a>
+          <a href="#compare">对比表</a>
+          <a href="#budget">费用预估</a>
+          <a href="#gallery">详细清单</a>
+          <a href="#routes">路线图</a>
+          <a href="#visa">签证</a>
+          <a href="#plan">时间安排</a>
+        </nav>
+        <nav class="navlinks" aria-label="仙本那流程规划导航" data-page-nav="semporna" hidden>
+          <a href="#semporna-overview">总览</a>
+          <a href="#semporna-transport">交通</a>
+          <a href="#semporna-stay">住宿</a>
+          <a href="#semporna-itinerary">行程</a>
+          <a href="#semporna-budget">预算</a>
+          <a href="#semporna-actions">待确认</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main id="top">
+    <div class="page-panel is-active" id="decisionPage" role="tabpanel" data-page-panel="decision" aria-hidden="false">
     <section class="hero">
       <div class="shell hero-grid">
         <div>
-          <h1><span>7.25-8.14</span><span><span class="nowrap">婚礼蜜月</span>目的地对比</span></h1>
-          <p class="lead">婚礼 7.29 在河南鹤壁举行，三个备选目的地按景点体验、双人成本、对华签证政策、中英文友好度和婚后执行难度综合评估。</p>
+          <h1><span>7.25-8.14</span><span><span class="nowrap">婚礼蜜月</span>决策推荐</span></h1>
+          <p class="lead">已决定把蜜月主线放在马来西亚仙本那。本页保留三地对比、费用和签证依据，重点解释为什么仙本那适合“海岛潜水和水屋记忆点优先”的蜜月目标。</p>
           <div class="hero-actions">
             <a class="btn primary" href="#summary">看综合推荐</a>
             <a class="btn" href="#gallery">看图片印象</a>
@@ -1155,37 +1378,36 @@
       <div class="shell">
         <div class="section-head">
           <h2>推荐结论</h2>
-          <p class="section-note">默认权重偏向蜜月氛围、景点丰富度和执行稳定性；下方可以切换偏好查看推荐变化。</p>
+          <p class="section-note">默认态按你们已经选择仙本那来呈现；下方仍保留不同偏好下的推荐变化，方便回看决策依据。</p>
         </div>
         <div class="recommendation">
           <article class="recommend-card" id="recommendCard">
             <div class="recommend-title"><span class="rank-dot"></span>
-              <h3 id="recommendTitle">综合首选：印尼巴厘岛为主线</h3>
+              <h3 id="recommendTitle">最终选择：马来西亚仙本那</h3>
             </div>
-            <p id="recommendCopy">巴厘岛在 8
-              月处于相对舒服的旱季，酒店与餐饮选择宽，英文服务成熟，既能住度假酒店，也能安排乌鲁瓦图、乌布、努沙佩尼达等照片感很强的行程。它比仙本那少一些转机和船程压力，比釜山更有传统蜜月海岛感。</p>
+            <p id="recommendCopy">如果把海水颜色、浮潜/深潜、离岛慢住和水屋体验放在第一优先级，仙本那是三个备选里记忆点最强的选择。它的代价是多段交通和离岛房量紧张，所以后续规划要围绕“广州/上海口岸、斗湖接驳、镇上缓冲、离岛 3-5 晚”来收紧。</p>
             <div class="scoreline" id="scoreline" aria-label="推荐目的地评分">
               <div class="score-row"><span>景点体验</span>
-                <div class="bar"><i style="--w:92%"></i></div><strong>9.2</strong>
+                <div class="bar"><i style="--w:96%"></i></div><strong>9.6</strong>
               </div>
               <div class="score-row"><span>成本可控</span>
-                <div class="bar"><i style="--w:74%"></i></div><strong>7.4</strong>
+                <div class="bar"><i style="--w:70%"></i></div><strong>7.0</strong>
               </div>
               <div class="score-row"><span>签证便利</span>
-                <div class="bar"><i style="--w:78%"></i></div><strong>7.8</strong>
-              </div>
-              <div class="score-row"><span>语言友好</span>
                 <div class="bar"><i style="--w:84%"></i></div><strong>8.4</strong>
               </div>
-              <div class="score-row"><span>执行难度</span>
+              <div class="score-row"><span>语言友好</span>
                 <div class="bar"><i style="--w:76%"></i></div><strong>7.6</strong>
+              </div>
+              <div class="score-row"><span>执行难度</span>
+                <div class="bar"><i style="--w:64%"></i></div><strong>6.4</strong>
               </div>
             </div>
           </article>
           <aside class="side-panel">
             <h3>按你的优先级切换</h3>
             <div class="mode-list">
-              <button class="mode-btn" type="button" data-mode="balanced" aria-pressed="true"><span>综合蜜月体验</span><svg
+              <button class="mode-btn" type="button" data-mode="balanced" aria-pressed="true"><span>最终选择依据</span><svg
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M20 6 9 17l-5-5" />
                 </svg></button>
@@ -1525,18 +1747,221 @@
         </ul>
       </div>
     </section>
+    </div>
+
+    <div class="page-panel" id="sempornaPage" role="tabpanel" data-page-panel="semporna" aria-hidden="true" hidden inert>
+      <section class="planner-hero" id="semporna-overview">
+        <div class="shell">
+          <h1><span>仙本那蜜月</span><span>流程规划</span></h1>
+          <p class="lead">按“7.31 之后从晋城/郑州出发，先在广州或上海玩两天，再飞斗湖进入仙本那，在马来西亚玩 8-10 天”的口径做第一版粗排。核心建议是优先走广州口岸，尽量锁定广州-斗湖直飞或低中转方案。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#semporna-transport">看交通主线</a>
+            <a class="btn" href="#semporna-budget">看预算估算</a>
+          </div>
+          <div class="planner-kpis" aria-label="仙本那规划关键指标">
+            <div class="kpi-card"><span>推荐总天数</span><strong>国内过渡 2 天 + 马来 8-10 天</strong></div>
+            <div class="kpi-card"><span>最顺口岸</span><strong>广州优先，上海备选</strong></div>
+            <div class="kpi-card"><span>双人粗预算</span><strong>约 3.2-8.8 万</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="semporna-transport">
+        <div class="shell">
+          <div class="section-head">
+            <h2>交通主线</h2>
+            <p class="section-note">以你在《收集信息.md》里记录的票价为基础：广州去斗湖约 2100/人中转、2600/人直飞；上海去斗湖约 2800/人中转；郑州去斗湖约 3400/人中转。</p>
+          </div>
+          <div class="route-options">
+            <article class="route-option recommended">
+              <span>首推方案</span>
+              <strong>晋城/郑州 -> 广州玩 2 天 -> 斗湖 -> 仙本那</strong>
+              <p>广州口岸去斗湖价格和执行性最好。郑州到广州可高铁约 700/人，也可看郑州往返广州机票约 900/人；广州到斗湖若能买到直飞，少一次中转最值。</p>
+            </article>
+            <article class="route-option">
+              <span>舒适备选</span>
+              <strong>晋城/郑州 -> 上海玩 2 天 -> 亚庇/斗湖 -> 仙本那</strong>
+              <p>上海城市体验更丰富，上海到亚庇直飞约 2100/人，但到仙本那仍要接亚庇-斗湖或陆空中转，整体不如广州直达斗湖利落。</p>
+            </article>
+            <article class="route-option">
+              <span>压缩方案</span>
+              <strong>郑州 -> 斗湖中转 -> 仙本那</strong>
+              <p>适合不想在国内多停留时使用，但郑州到斗湖约 3400/人且中转链条长，婚礼后体力和航班延误风险更高。</p>
+            </article>
+          </div>
+          <div class="planner-grid" style="margin-top: 16px;">
+            <div class="planner-card"><span>晋城/郑州集结</span><strong>7.31 或 8.1 出发</strong><p>晋城到郑州按高铁/城际约 60/人估算，建议当天到广州或上海，不要再接国际段。</p></div>
+            <div class="planner-card"><span>国内过渡城市</span><strong>广州更匹配仙本那</strong><p>广州玩 2 天可安排珠江夜游、沙面、长隆或顺德美食；上海则更适合外滩、迪士尼、城市酒店休整。</p></div>
+            <div class="planner-card"><span>抵达仙本那</span><strong>斗湖机场 + 1.5-2 小时车程</strong><p>斗湖到仙本那镇建议提前订接机，抵达日只住镇上，不安排出海和潜水。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="semporna-stay" class="budget-section">
+        <div class="shell">
+          <div class="section-head">
+            <h2>住宿组合</h2>
+            <p class="section-note">仙本那不要天天换岛。第一版建议按“国内城市 2 晚 + 仙本那镇 2-3 晚 + 离岛/水屋 3-5 晚 + 返程缓冲 1 晚”去查房。</p>
+          </div>
+          <div class="stay-grid">
+            <article class="stay-card">
+              <span>国内两晚</span>
+              <strong>广州/上海住交通便利区</strong>
+              <p>广州建议天河、珠江新城、北京路或机场线便利位置；上海建议人民广场、静安、陆家嘴或浦东机场前夜。目标是休整和方便去机场。</p>
+            </article>
+            <article class="stay-card">
+              <span>仙本那镇上</span>
+              <strong>到达日 + 出海前后缓冲</strong>
+              <p>镇上酒店不用追求度假感，重点看码头距离、接送、卫生和早餐。适合 Seafest、Wave View 或同级过渡酒店。</p>
+            </article>
+            <article class="stay-card">
+              <span>离岛/水屋</span>
+              <strong>把蜜月记忆点集中在 3-5 晚</strong>
+              <p>优先查卡帕莱、马达京、马布水屋、邦邦岛或 Maglami-Lami。预算有限就少住水屋，多用跳岛和浮潜补体验。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="semporna-itinerary">
+        <div class="shell">
+          <div class="section-head">
+            <h2>8-10 天游玩节奏</h2>
+            <p class="section-note">以下按马来西亚境内 9 天示例，前后可各压缩或增加一天。重点是先适应船程，再进入离岛慢住，最后留返程缓冲。</p>
+          </div>
+          <div class="planner-table" role="region" aria-label="仙本那行程表" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>天数</th>
+                  <th>城市/住宿</th>
+                  <th>推荐安排</th>
+                  <th>注意点</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>D0-D2</td><td>晋城/郑州 -> 广州或上海</td><td>国内城市玩两天，买补给、换现金/电话卡、休整睡眠。</td><td>不要当天接国际红眼，婚礼后先把体力补回来。</td></tr>
+                <tr><td>D1</td><td>斗湖 -> 仙本那镇</td><td>抵达斗湖，接机到仙本那镇，确认潜水/跳岛订单和装备。</td><td>车程约 1.5-2 小时，当天不排出海。</td></tr>
+                <tr><td>D2</td><td>仙本那镇</td><td>敦沙卡兰海洋公园、波黑杜朗、珍珠岛视角，做低强度跳岛适应。</td><td>登山/浮潜受天气和许可影响，带防晒和涉水鞋。</td></tr>
+                <tr><td>D3-D5</td><td>马布/卡帕莱/马达京</td><td>入住离岛或水屋，安排浮潜、体验潜、海边晚餐和拍照。</td><td>水屋名额紧，先锁房再反推机票；深潜需看证书和身体状态。</td></tr>
+                <tr><td>D6</td><td>西巴丹或长线跳岛</td><td>有潜水资质可冲西巴丹；否则选马达京、汀巴汀巴、邦邦岛轻松线。</td><td>西巴丹许可要提前确认，不建议把它当作必然行程。</td></tr>
+                <tr><td>D7-D8</td><td>仙本那镇/离岛</td><td>做一到两天弹性日：补拍照、SPA、镇上休整或改天气备选。</td><td>连续出海很累，至少留半天无安排。</td></tr>
+                <tr><td>D9-D10</td><td>斗湖/返程口岸</td><td>斗湖返广州/上海/郑州，必要时在广州或上海再住一晚缓冲。</td><td>国际返程前一晚尽量不要住离岛，避免船程误机。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="semporna-budget" class="budget-section">
+        <div class="shell">
+          <div class="section-head">
+            <h2>费用估算</h2>
+            <p class="section-note">按双人、国内城市 2 晚、马来西亚 8-10 天估算。机酒会随暑期余票、离岛房量和水屋档次大幅波动。</p>
+          </div>
+          <div class="money-grid">
+            <article class="money-card">
+              <header><h3>性价比方案</h3><p>广州口岸 + 镇上为主 + 2-3 晚离岛/沙屋。</p></header>
+              <div class="budget-body">
+                <div class="budget-total"><div><span>双人总价</span><strong>约 3.2-4.6 万</strong></div><div><span>适合</span><strong>控预算但保留海岛体验</strong></div></div>
+                <ul class="budget-list">
+                  <li><span>晋城/郑州到广州或上海，含城际/高铁/机票弹性</span><strong>0.15-0.45 万</strong></li>
+                  <li><span>广州/上海 2 晚酒店、餐饮、市内交通</span><strong>0.35-0.80 万</strong></li>
+                  <li><span>广州/上海到斗湖往返机票，优先广州</span><strong>0.42-0.60 万</strong></li>
+                  <li><span>仙本那镇上 4-5 晚 + 离岛/沙屋 2-3 晚</span><strong>1.1-1.8 万</strong></li>
+                  <li><span>跳岛、浮潜、接送、餐饮、保险、杂费</span><strong>1.2-1.7 万</strong></li>
+                </ul>
+              </div>
+            </article>
+            <article class="money-card">
+              <header><h3>舒适推荐</h3><p>广州直飞斗湖优先 + 镇上缓冲 + 3-4 晚水屋/离岛。</p></header>
+              <div class="budget-body">
+                <div class="budget-total"><div><span>双人总价</span><strong>约 4.8-6.8 万</strong></div><div><span>适合</span><strong>蜜月记忆点最均衡</strong></div></div>
+                <ul class="budget-list">
+                  <li><span>国内段与国内城市两天，酒店选更舒服位置</span><strong>0.6-1.2 万</strong></li>
+                  <li><span>广州-斗湖直飞/低中转往返，含行李</span><strong>0.52-0.75 万</strong></li>
+                  <li><span>镇上 2-3 晚 + 卡帕莱/马达京/马布 3-4 晚</span><strong>2.2-3.8 万</strong></li>
+                  <li><span>跳岛、浮潜/体验潜、接送、许可、装备</span><strong>0.8-1.4 万</strong></li>
+                  <li><span>餐饮、旅拍/SPA、保险、通讯、备用金</span><strong>0.7-1.2 万</strong></li>
+                </ul>
+              </div>
+            </article>
+            <article class="money-card">
+              <header><h3>高端水屋</h3><p>离岛住 5 晚左右，把预算集中到水屋和潜水。</p></header>
+              <div class="budget-body">
+                <div class="budget-total"><div><span>双人总价</span><strong>约 6.8-8.8 万+</strong></div><div><span>适合</span><strong>水屋和私密度优先</strong></div></div>
+                <ul class="budget-list">
+                  <li><span>国内段、广州/上海两晚高星酒店和餐饮</span><strong>1.0-1.8 万</strong></li>
+                  <li><span>国际往返机票，优先直飞/短中转舒适时刻</span><strong>0.65-0.95 万</strong></li>
+                  <li><span>卡帕莱/马达京/马布水屋 5 晚左右</span><strong>3.8-5.6 万</strong></li>
+                  <li><span>潜水、上岛许可、包车接送、船程升级</span><strong>0.9-1.6 万</strong></li>
+                  <li><span>餐饮、纪念体验、保险、不可预见支出</span><strong>0.8-1.4 万</strong></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="budget-note">第一版结论：若你们已经确定仙本那，最值得先查的是“广州-斗湖直飞/低中转 + 卡帕莱/马达京/马布水屋 3-4 晚”的组合。只要离岛房源和航班价格能接受，就比先纠结镇上酒店更关键。</div>
+        </div>
+      </section>
+
+      <section id="semporna-actions">
+        <div class="shell">
+          <div class="section-head">
+            <h2>下一步待确认</h2>
+            <p class="section-note">这一页先做粗规划，真正出票前建议按下面顺序确认，避免先买了便宜机票却订不到理想离岛房。</p>
+          </div>
+          <div class="check-grid">
+            <article class="check-card"><span>1</span><strong>先锁离岛房源</strong><p>卡帕莱、马达京、马布水屋、邦邦岛任选 2-3 家查 8 月初连续 3-5 晚房量和取消政策。</p></article>
+            <article class="check-card"><span>2</span><strong>再定国际航班</strong><p>优先广州-斗湖直飞；若价格或日期不合适，再看广州中转、上海-亚庇-斗湖或郑州中转斗湖。</p></article>
+            <article class="check-card"><span>3</span><strong>补齐证件和项目</strong><p>护照有效期、MDAC、返程机票、保险、潜水证书/体验潜限制、西巴丹许可和接送确认单都要统一存档。</p></article>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <div class="shell">建议下一步：确定“蜜月主诉求”是海岛潜水、奢华度假还是低压力休假，再用同一套日期去查实时航班和酒店总价。</div>
+    <div class="shell">建议下一步：先锁仙本那离岛/水屋房源，再反推广州或上海口岸航班和国内两天过渡城市。</div>
   </footer>
 
   <script>
+    const pageTabs = document.querySelectorAll('[data-page-tab]');
+    const pagePanels = document.querySelectorAll('[data-page-panel]');
+    const pageNavs = document.querySelectorAll('[data-page-nav]');
+
+    const setPage = (page, shouldScroll = true) => {
+      pageTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.pageTab === page)));
+      pagePanels.forEach((panel) => {
+        const isHidden = panel.dataset.pagePanel !== page;
+        panel.hidden = isHidden;
+        panel.toggleAttribute('inert', isHidden);
+        panel.setAttribute('aria-hidden', String(isHidden));
+      });
+      pageNavs.forEach((nav) => {
+        nav.hidden = nav.dataset.pageNav !== page;
+      });
+
+      if (shouldScroll) {
+        const targetId = page === 'semporna' ? 'semporna-overview' : 'top';
+        history.replaceState(null, '', `#${targetId}`);
+        requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
+      }
+    };
+
+    pageTabs.forEach((tab) => {
+      tab.addEventListener('click', () => setPage(tab.dataset.pageTab));
+    });
+
+    if (location.hash.startsWith('#semporna-')) {
+      setPage('semporna', false);
+      requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView());
+    }
+
     const modes = {
       balanced: {
-        title: '综合首选：印尼巴厘岛为主线',
-        copy: '巴厘岛在 8 月处于相对舒服的旱季，酒店与餐饮选择宽，英文服务成熟，既能住度假酒店，也能安排乌鲁瓦图、乌布、努沙佩尼达等照片感很强的行程。它比仙本那少一些转机和船程压力，比釜山更有传统蜜月海岛感。',
-        scores: [['景点体验', 92, '9.2'], ['成本可控', 74, '7.4'], ['签证便利', 78, '7.8'], ['语言友好', 84, '8.4'], ['执行难度', 76, '7.6']]
+        title: '最终选择：马来西亚仙本那',
+        copy: '如果把海水颜色、浮潜/深潜、离岛慢住和水屋体验放在第一优先级，仙本那是三个备选里记忆点最强的选择。它的代价是多段交通和离岛房量紧张，所以后续规划要围绕“广州/上海口岸、斗湖接驳、镇上缓冲、离岛 3-5 晚”来收紧。',
+        scores: [['景点体验', 96, '9.6'], ['成本可控', 70, '7.0'], ['签证便利', 84, '8.4'], ['语言友好', 76, '7.6'], ['执行难度', 64, '6.4']]
       },
       visa: {
         title: '稳妥首选：韩国釜山',
@@ -1721,7 +2146,7 @@
         <div class="route-fact"><span>${label}</span><strong>${value}</strong></div>
       `).join('');
       routeMap.innerHTML = selected.route.stops.map(([day, title, detail]) => `
-        <div class="route-node" data-day="${day}"><strong>${title}</strong><span>${detail}</span></div>
+        <div class="route-node" data-day="${day}"><span class="route-day">${day}</span><strong>${title}</strong><span>${detail}</span></div>
       `).join('');
       routeTip.textContent = selected.route.tip;
     };
