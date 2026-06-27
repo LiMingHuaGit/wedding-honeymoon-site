@@ -705,6 +705,8 @@
     .planner-grid,
     .route-options,
     .stay-grid,
+    .dive-grid,
+    .prep-grid,
     .check-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -719,6 +721,8 @@
     .planner-card,
     .route-option,
     .stay-card,
+    .dive-card,
+    .prep-card,
     .check-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -730,6 +734,8 @@
     .planner-card,
     .route-option,
     .stay-card,
+    .dive-card,
+    .prep-card,
     .check-card {
       padding: 16px;
     }
@@ -738,6 +744,8 @@
     .planner-card span,
     .route-option span,
     .stay-card span,
+    .dive-card span,
+    .prep-card span,
     .check-card span {
       display: block;
       color: var(--muted);
@@ -749,6 +757,8 @@
     .planner-card strong,
     .route-option strong,
     .stay-card strong,
+    .dive-card strong,
+    .prep-card strong,
     .check-card strong {
       display: block;
       margin-top: 4px;
@@ -759,6 +769,8 @@
     .planner-card p,
     .route-option p,
     .stay-card p,
+    .dive-card p,
+    .prep-card p,
     .check-card p {
       margin: 10px 0 0;
       color: var(--muted);
@@ -768,6 +780,49 @@
     .route-option.recommended {
       border-color: rgba(15, 118, 110, 0.45);
       background: #f5fbf8;
+    }
+
+    .dive-section {
+      background: linear-gradient(180deg, #ffffff 0%, #eef7f2 100%);
+      border-block: 1px solid var(--line);
+    }
+
+    .dive-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 16px;
+    }
+
+    .dive-card.featured {
+      border-color: rgba(15, 118, 110, 0.42);
+      background: #f5fbf8;
+    }
+
+    .prep-grid {
+      margin-top: 16px;
+    }
+
+    .prep-card ul,
+    .dive-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .prep-card li+li,
+    .dive-card li+li {
+      margin-top: 7px;
+    }
+
+    .safety-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid #f0d5c4;
+      background: #fff7f0;
+      color: #73513d;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .planner-table {
@@ -1182,6 +1237,8 @@
       .planner-grid,
       .route-options,
       .stay-grid,
+      .dive-grid,
+      .prep-grid,
       .check-grid,
       .money-grid {
         grid-template-columns: 1fr;
@@ -1219,7 +1276,7 @@
       }
 
       section {
-        scroll-margin-top: 132px;
+        scroll-margin-top: 184px;
       }
 
       .nav {
@@ -1267,6 +1324,8 @@
       .planner-grid,
       .route-options,
       .stay-grid,
+      .dive-grid,
+      .prep-grid,
       .check-grid,
       .profile-grid,
       .visa-grid,
@@ -1332,6 +1391,7 @@
           <a href="#semporna-transport">交通</a>
           <a href="#semporna-stay">住宿</a>
           <a href="#semporna-itinerary">行程</a>
+          <a href="#semporna-dive">浮潜深潜</a>
           <a href="#semporna-budget">预算</a>
           <a href="#semporna-actions">待确认</a>
         </nav>
@@ -1850,6 +1910,90 @@
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section id="semporna-dive" class="dive-section">
+        <div class="shell">
+          <div class="section-head">
+            <h2>浮潜和深潜准备</h2>
+            <p class="section-note">你们两个人都没有浮潜和深潜经验，建议把目标拆成两层：浮潜作为必选基础体验，深潜先选体验潜或提前考证，不要到仙本那临时硬上高强度课程。</p>
+          </div>
+          <div class="dive-grid">
+            <article class="dive-card featured">
+              <span>浮潜 Snorkeling</span>
+              <strong>零经验也适合，重点是面镜适配和水面安全</strong>
+              <p>浮潜是在水面用面镜、呼吸管和救生衣观察海底。不会深潜也能玩，但第一次不要离船太远，尽量选择有中文教练或一对小团带看的跳岛线路。</p>
+              <ul>
+                <li>必备：合脸面镜、呼吸管、救生衣或浮力背心、防晒衣、涉水鞋、速干毛巾。</li>
+                <li>建议：防雾剂、耳塞或耳罩按个人习惯、晕船药、干湿分离袋、防水手机袋。</li>
+                <li>现场确认：船员是否全程看护、是否提供救生衣、是否有备用面镜、是否允许不会游泳者下水。</li>
+              </ul>
+            </article>
+            <article class="dive-card">
+              <span>深潜 Scuba Diving</span>
+              <strong>先体验潜，再决定是否考 OW</strong>
+              <p>深潜需要气瓶、调节器、BCD、配重和教练带领。没有证书可以做 Discover Scuba Diving / 体验潜；想独立参加潜水行程，一般要先考开放水域 OW。</p>
+              <ul>
+                <li>体验潜：通常半天到一天，浅水训练后由教练带下水，适合判断是否喜欢深潜。</li>
+                <li>OW 考证：通常 3-4 天，包含理论、平静水域训练和开放水域训练，蜜月行程会被明显占用。</li>
+                <li>飞行限制：深潜后通常至少 18-24 小时不坐飞机，返程前一天不要安排深潜。</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="prep-grid">
+            <article class="prep-card">
+              <span>国内提前准备</span>
+              <strong>先把水性和耳压练出来</strong>
+              <ul>
+                <li>去泳池练 2-3 次：脸入水、漂浮、踢腿、在水中放松呼吸。</li>
+                <li>提前试面镜：吸住脸不漏水、鼻子空间舒服、戴 10 分钟不压鼻梁。</li>
+                <li>练耳压平衡：吞咽、捏鼻轻吹等动作，感冒鼻塞时不要深潜。</li>
+                <li>如果容易晕车晕船，提前问医生或药师准备合适晕船药，并先确认自己是否嗜睡。</li>
+              </ul>
+            </article>
+            <article class="prep-card">
+              <span>建议国内购买</span>
+              <strong>个人贴身装备买，重装备当地租</strong>
+              <ul>
+                <li>买：面镜、呼吸管、防晒长袖水母衣/泳衣、涉水鞋、防水袋、速干浴巾。</li>
+                <li>可买：近视面镜或隐形眼镜备用、防雾剂、GoPro/运动相机手绳、潜水袜。</li>
+                <li>当地租：脚蹼、湿衣、BCD、调节器、气瓶、配重，第一次不建议自己买重装备。</li>
+                <li>防晒优先用物理遮挡：长袖水母衣、帽子、墨镜；防晒霜选海洋友好型并避免涂到面镜密封圈。</li>
+              </ul>
+            </article>
+            <article class="prep-card">
+              <span>证件和保险</span>
+              <strong>深潜相关材料提前放进旅行文件夹</strong>
+              <ul>
+                <li>护照、酒店订单、返程机票、MDAC、潜店确认单和接送联系人截图离线保存。</li>
+                <li>若考 OW：提前完成 PADI/SSI 理论 eLearning，带好账号、证件照或电子资料。</li>
+                <li>如有哮喘、心肺疾病、耳鼻喉问题、近期手术或长期用药，报名深潜前先做医学确认。</li>
+                <li>保险要看清是否覆盖浮潜、体验潜、休闲水肺潜水、医疗转运和行程取消。</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="planner-table" role="region" aria-label="浮潜深潜费用和时间估算" tabindex="0" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>适合你们吗</th>
+                  <th>时间</th>
+                  <th>双人费用粗估</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>浮潜跳岛</td><td>首选，零经验友好，必须穿救生衣</td><td>半天到一天</td><td>约 800-2500 元</td></tr>
+                <tr><td>体验潜</td><td>适合先试一次，不需要证书但必须跟教练</td><td>半天到一天</td><td>约 1200-3000 元</td></tr>
+                <tr><td>OW 考证</td><td>如果很想系统学，可以国内先学理论或直接国内考完</td><td>3-4 天</td><td>约 5000-9000 元</td></tr>
+                <tr><td>西巴丹深潜</td><td>不建议零经验直接冲，通常需要证书、经验和名额</td><td>一天</td><td>费用和许可按潜店实时报价</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="safety-note">给你们的路线建议：D2 先安排救生衣浮潜和浅水适应；D3-D5 如果状态好，再做一次体验潜；如果想考证，最好在国内提前完成泳池体验或 OW 理论，避免把蜜月连续 3-4 天变成上课考试。任何深潜日后都不要喝酒，也不要安排第二天一早飞行。</div>
         </div>
       </section>
 
